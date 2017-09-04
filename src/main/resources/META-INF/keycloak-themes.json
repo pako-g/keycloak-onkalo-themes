@@ -1,0 +1,6 @@
+{
+  "themes": [{
+    "name" : "onkalo",
+    "types": [ "login", "common" ]
+  }]
+}

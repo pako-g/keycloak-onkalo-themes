@@ -1,0 +1,27 @@
+<!-- Wide card with share menu button -->
+ .demo-card-wide.mdl-card {
+     width: 512px;
+ }
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url('../img/welcome_card.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+
+/*
+.mdl-textfield--floating-label input[type=password]:-webkit-autofill ~ label {
+    !*transform: translate3d(0, -20px, 0);*!
+    visibility: hidden;
+}
+
+.mdl-textfield--floating-label input[type=password]:-webkit-autofill ~ label:after {
+    !*content: 'Password';*!
+    visibility: hidden;
+    !*left: 0;*!
+    !*transform: translate3d(0, -20px, 0);*!
+
+}*/

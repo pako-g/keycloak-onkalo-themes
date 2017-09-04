@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.keycloak</groupId>
+    <artifactId>keycloak-onkalo-themes</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Keycloak Onkalo Theme</name>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <issueManagement>
+        <system>Keycloak Onkalo Theme GitHub </system>
+        <url>https://github.com/Zap-Dev/keycloak-onkalo-theme/issues</url>
+    </issueManagement>
+
+    <properties>
+        <JBOSS_HOME>/home/pasquale/opt/keycloak-3.3.0.CR1</JBOSS_HOME>
+    </properties>
+
+
+
+    <build>
+        <finalName>keycloak-onkalo-themes</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>exec-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <version>1.4.0</version>
+                <executions>
+                    <execution>
+                        <id>remove-onkalo-themes</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <successCodes>
+                                <successCode>0</successCode>
+                                <successCode>1</successCode>
+                            </successCodes>
+                            <executable>${JBOSS_HOME}/bin/jboss-cli.sh</executable>
+                            <arguments>
+                                <argument>--command=module remove
+                                    --name=org.keycloak.onkalo.themes
+                                    --resources=${project.basedir}/target/keycloak-onkalo-themes.jar</argument>
+                            </arguments>
+                        </configuration>
+
+                    </execution>
+                    <execution>
+                        <id>add-onkalo-themes</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${JBOSS_HOME}/bin/jboss-cli.sh</executable>
+                            <arguments>
+                                <argument>--command=module add
+                                    --name=org.keycloak.onkalo.themes
+                                    --resources=${project.basedir}/target/keycloak-onkalo-themes.jar</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+    <url>https://github.com/Zap-Dev/keycloak-onkalo-theme</url>
+    <organization>
+        <url>https://github.com/Zap-Dev/</url>
+        <name>Zap-Dev</name>
+    </organization>
+    <scm>
+        <url>https://github.com/Zap-Dev/keycloak-onkalo-theme/</url>
+        <connection>git@github.com:Zap-Dev/keycloak-onkalo-theme.git</connection>
+    </scm>
+
+
+</project>
