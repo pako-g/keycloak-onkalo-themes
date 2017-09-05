@@ -68,6 +68,26 @@
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
 
                     <#if displayMessage && message?has_content>
+                        <#--${displayMessage?c}<br/>
+                        ${message?has_content?c}<br/>
+                        ${message.type}<br/>
+                        <#global test = message.summary >-->
+
+                        <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar mdl-color--accent">
+                            <div class="mdl-snackbar__text"></div>
+                            <button class="mdl-snackbar__action" type="button" style="display:none;"></button>
+                        </div>
+                        <script>
+                            $(function () {
+                                var ErrorStringValue = '@ViewBag.ErrorText';
+                                if (ErrorStringValue.length > 0) {
+                                    setTimeout(addSnackbar(ErrorStringValue), 2000);
+                                }
+                            });
+                        </script>
+
+
+
                         <div class="${properties.kcFeedbackAreaClass!}">
                             <div class="alert alert-${message.type}">
                                 <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>

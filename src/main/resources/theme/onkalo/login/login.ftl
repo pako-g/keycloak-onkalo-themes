@@ -1,4 +1,5 @@
 <#import "template.ftl" as layout>
+
 <@layout.registrationLayout displayInfo=social.displayInfo; section>
     <#if section = "title">
         ${msg("loginTitle",(realm.displayName!''))}
@@ -8,7 +9,7 @@
         <#if realm.password>
 
         <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col"></div>
+            <div class="mdl-layout-spacer"></div>
 
             <div class="mdl-cell mdl-cell--4-col">
                 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
@@ -59,7 +60,6 @@
                                 </button>
                                 </div>
                             </div>
-
                         </form>
 
                     </div>
@@ -99,7 +99,7 @@
                 </div>
 
             </div>
-            <div class="mdl-cell mdl-cell--4-col"></div>
+            <div class="mdl-layout-spacer"></div>
         </div>
 
 </@layout.registrationLayout>
