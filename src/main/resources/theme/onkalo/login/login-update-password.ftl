@@ -5,6 +5,9 @@
     <#elseif section = "header">
         ${msg("updatePasswordTitle")}
     <#elseif section = "form">
+
+
+
     <div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-cell mdl-cell--4-col">
@@ -19,11 +22,11 @@
                         <input type="password" readonly value="this is not a login form" style="display: none;">
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="password-new" name="password-new" autofocus autocomplete="off">
+                            <input class="mdl-textfield__input" type="password" id="password-new" name="password-new" autofocus autocomplete="off">
                             <label class="mdl-textfield__label" for="password-new">${msg("passwordNew")}</label>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="password-confirm" name="password-confirm" autocomplete="off">
+                            <input class="mdl-textfield__input" type="password" id="password-confirm" name="password-confirm" autocomplete="off">
                             <label class="mdl-textfield__label" for="password-confirm">${msg("passwordConfirm")}</label>
                         </div>
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
