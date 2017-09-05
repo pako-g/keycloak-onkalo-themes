@@ -23,7 +23,9 @@
     </issueManagement>
 
     <properties>
-        <JBOSS_HOME>/home/pasquale/opt/keycloak-3.3.0.CR1</JBOSS_HOME>
+        <KEYCLOAK_HOME>/home/pasquale/opt/keycloak-3.3.0.CR1</KEYCLOAK_HOME>
+        <!--<KEYCLOAK_HOME>${env.KEYCLOAK_HOME}</KEYCLOAK_HOME>-->
+
     </properties>
 
 
@@ -47,7 +49,7 @@
                                 <successCode>0</successCode>
                                 <successCode>1</successCode>
                             </successCodes>
-                            <executable>${JBOSS_HOME}/bin/jboss-cli.sh</executable>
+                            <executable>${KEYCLOAK_HOME}/bin/jboss-cli.sh</executable>
                             <arguments>
                                 <argument>--command=module remove
                                     --name=org.keycloak.onkalo.themes
@@ -63,7 +65,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>${JBOSS_HOME}/bin/jboss-cli.sh</executable>
+                            <executable>${KEYCLOAK_HOME}/bin/jboss-cli.sh</executable>
                             <arguments>
                                 <argument>--command=module add
                                     --name=org.keycloak.onkalo.themes
