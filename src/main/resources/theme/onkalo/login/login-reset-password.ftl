@@ -8,13 +8,14 @@
         <div class="mdl-grid">
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-cell mdl-cell--4-col">
-                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text">Welcome</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
+                        <div>${msg("emailInstruction")}</div>
                         <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                 <input class="mdl-textfield__input" type="text" id="username" name="username" autofocus>
                                 <label class="mdl-textfield__label" for="username"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                             </div>

@@ -91,7 +91,7 @@
                                 var messageType="${message.type}";
                                 var data = {
                                     message: '${message.summary}',
-                                    timeout: 3000,
+                                    timeout: 6000,
                                     /*actionHandler: handler,*/
                                     actionText: 'Undo'
                                 };
