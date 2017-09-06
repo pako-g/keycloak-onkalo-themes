@@ -73,24 +73,7 @@
                         ${message.type}<br/>
                         ${message.summary}-->
 
-                    <#--
-                    <#global test = message.summary >-->
-
-                        <#--<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar mdl-color--accent">
-                            <div class="mdl-snackbar__text"></div>
-                            <button class="mdl-snackbar__action" type="button" style="display:none;"></button>
-                        </div>-->
-                        <#--<script>
-                            $(function () {
-                                var ErrorStringValue = '@ViewBag.ErrorText';
-                                if (ErrorStringValue.length > 0) {
-                                    setTimeout(addSnackbar(ErrorStringValue), 2000);
-                                }
-                            });
-                        </script>-->
-
-
-                        <div class="mdl-grid center-items">
+                        <div class="mdl-grid">
                             <div class="mdl-layout-spacer"></div>
                             <div class="mdl-cell mdl-cell--4-col">
                                 <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
@@ -117,18 +100,6 @@
 
                                 snackbarContainer.MaterialSnackbar.showSnackbar(data);
 
-                                /*if( messageType == "success" ){
-                                    snackbarContainer.style.backgroundColor = '#18BA30';
-                                }
-                                if( messageType == "warning" ){
-                                    snackbarContainer.style.backgroundColor = '#F7FF02';
-                                }
-                                if( messageType == "error" ){
-                                    snackbarContainer.style.backgroundColor = '#DD1313';
-                                }
-                                if( messageType == "info" ){
-                                    snackbarContainer.style.backgroundColor = '#0281FF';
-                                }*/
                             });
                         </script>
 

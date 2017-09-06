@@ -24,25 +24,29 @@
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="text" id="username" name="username" value="${(register.formData.username!'')?html}">
                                     <label class="mdl-textfield__label" for="username">${msg("username")}</label>
+                                    <span class="mdl-textfield__error">${msg("username")} ${msg("empty")}</span>
                                 </div>
                             </div>
                         </#if>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="text" id="firstName" name="firstName" value="${(register.formData.firstName!'')?html}">
-                                    <label class="mdl-textfield__label" for="firstName">${msg("username")}</label>
+                                    <label class="mdl-textfield__label" for="firstName">${msg("firstName")}</label>
+                                    <span class="mdl-textfield__error">${msg("firstName")} ${msg("empty")}</span>
                                 </div>
                             </div>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('lastName',properties.kcFormGroupErrorClass!)}">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="text" id="lastName" name="lastName" value="${(register.formData.lastName!'')?html}">
                                     <label class="mdl-textfield__label" for="lastName">${msg("lastName")}</label>
+                                    <span class="mdl-textfield__error">${msg("lastName")} ${msg("empty")}</span>
                                 </div>
                             </div>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="text" id="email" name="email" value="${(register.formData.email!'')?html}">
                                     <label class="mdl-textfield__label" for="email">${msg("email")}</label>
+                                    <span class="mdl-textfield__error">${msg("email")} ${msg("empty")}</span>
                                 </div>
                             </div>
                         <#if passwordRequired>
@@ -50,12 +54,14 @@
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="password" id="password" name="password">
                                     <label class="mdl-textfield__label" for="password">${msg("password")}</label>
+                                    <span class="mdl-textfield__error">${msg("password")} ${msg("empty")}</span>
                                 </div>
                             </div>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('password-confirm',properties.kcFormGroupErrorClass!)}">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="password" id="password-confirm" name="password-confirm">
                                     <label class="mdl-textfield__label" for="password-confirm">${msg("passwordConfirm")}</label>
+                                    <span class="mdl-textfield__error">${msg("passwordConfirm")} ${msg("empty")}</span>
                                 </div>
                             </div>
                         </#if>
@@ -67,11 +73,77 @@
                             </div>
                         </#if>
                             <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="${msg("doRegister")}">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" value="${msg("doRegister")}" id="kc-register">
                                     ${msg("doRegister")}
                                 </button>
                             </div>
                     </form>
+                    <script>
+                        $(function () {
+                            var registerButton = document.querySelector('#kc-register');
+                            var usernameFlag="${realm.registrationEmailAsUsername?c}";
+                            var passwordFlag="${passwordRequired?c}";
+
+                            console.log(usernameFlag);
+                            console.log(passwordFlag);
+
+
+                            var username = $("#username");
+                            var firstName = $("#firstName");
+                            var lastName = $("#lastName");
+                            var email = $("#email");
+                            var password = $("#password");
+                            var passwordConfirm = $("#password-confirm");
+
+                            console.log(username);
+
+                            registerButton.addEventListener('click', function() {
+                                'use strict';
+                                if(!usernameFlag)
+                                    addValidation(username);
+
+                                addValidation(firstName);
+                                addValidation(lastName);
+                                addValidation(email);
+                                if(passwordFlag){
+                                    addValidation(password);
+                                    addValidation(passwordConfirm);
+                                }
+                            });
+
+                            if(!usernameFlag)
+                                username[0].addEventListener('focusout', function() {
+                                    'use strict';
+                                    addValidation(username);
+                                });
+
+
+                            firstName[0].addEventListener('focusout', function() {
+                                'use strict';
+                                addValidation(firstName);
+                            });
+                            lastName[0].addEventListener('focusout', function() {
+                                'use strict';
+                                addValidation(lastName);
+                            });
+                            email[0].addEventListener('focusout', function() {
+                                'use strict';
+                                addValidation(email);
+                            });
+
+                            if(passwordFlag){
+                                password[0].addEventListener('focusout', function() {
+                                    'use strict';
+                                    addValidation(password);
+                                });
+                                passwordConfirm[0].addEventListener('focusout', function() {
+                                    'use strict';
+                                    addValidation(passwordConfirm);
+                                });
+                            }
+
+                        });
+                    </script>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
