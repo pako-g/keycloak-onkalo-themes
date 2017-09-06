@@ -68,10 +68,10 @@
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
 
                     <#if displayMessage && message?has_content>
-                        ${displayMessage?c}<br/>
+                        <#--${displayMessage?c}<br/>
                         ${message?has_content?c}<br/>
                         ${message.type}<br/>
-                        ${message.summary}
+                        ${message.summary}-->
 
                     <#--
                     <#global test = message.summary >-->
@@ -105,21 +105,35 @@
                         <script>
                             $(function () {
                                 var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                                var messageType="${message.type}";
                                 var data = {
-                                    message: 'Button color changed.',
-                                    timeout: 2000,
+                                    message: '${message.summary}',
+                                    timeout: 3000,
                                     /*actionHandler: handler,*/
                                     actionText: 'Undo'
                                 };
-                                snackbarContainer.style.backgroundColor = '#' +
-                                        Math.floor(Math.random() * 0xFFFFFF).toString(16);
+
+                                colorSnackbar(snackbarContainer,messageType);
 
                                 snackbarContainer.MaterialSnackbar.showSnackbar(data);
+
+                                /*if( messageType == "success" ){
+                                    snackbarContainer.style.backgroundColor = '#18BA30';
+                                }
+                                if( messageType == "warning" ){
+                                    snackbarContainer.style.backgroundColor = '#F7FF02';
+                                }
+                                if( messageType == "error" ){
+                                    snackbarContainer.style.backgroundColor = '#DD1313';
+                                }
+                                if( messageType == "info" ){
+                                    snackbarContainer.style.backgroundColor = '#0281FF';
+                                }*/
                             });
                         </script>
 
 
-                        <div class="${properties.kcFeedbackAreaClass!}">
+                       <#-- <div class="${properties.kcFeedbackAreaClass!}">
                             <div class="alert alert-${message.type}">
                                 <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
                                 <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
@@ -127,7 +141,7 @@
                                 <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
                                 <span class="kc-feedback-text">${message.summary}</span>
                             </div>
-                        </div>
+                        </div>-->
                     </#if>
 
                     <div id="kc-form" class="${properties.kcFormAreaClass!}">

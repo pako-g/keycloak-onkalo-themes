@@ -10,3 +10,18 @@ function addValidation(element){
         element.parent().addClass('is-invalid');
     }
 }
+function colorSnackbar(element, messageType){
+    if( messageType === "success" ){
+        element.style.backgroundColor = '#18BA30';
+    }
+    if( messageType === "warning" ){
+        element.style.backgroundColor = '#F7FF02';
+    }
+    if( messageType === "error" ){
+        element.style.backgroundColor = '#DD1313';
+    }
+    if( messageType === "info" ){
+        element.style.backgroundColor = '#0281FF';
+    }
+
+}
