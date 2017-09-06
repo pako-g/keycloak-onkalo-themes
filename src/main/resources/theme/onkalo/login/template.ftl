@@ -73,19 +73,47 @@
                         ${message.type}<br/>
                         <#global test = message.summary >-->
 
-                        <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar mdl-color--accent">
+                        <#--<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar mdl-color--accent">
                             <div class="mdl-snackbar__text"></div>
                             <button class="mdl-snackbar__action" type="button" style="display:none;"></button>
-                        </div>
-                        <script>
+                        </div>-->
+                        <#--<script>
                             $(function () {
                                 var ErrorStringValue = '@ViewBag.ErrorText';
                                 if (ErrorStringValue.length > 0) {
                                     setTimeout(addSnackbar(ErrorStringValue), 2000);
                                 }
                             });
-                        </script>
+                        </script>-->
 
+
+                        <div class="mdl-grid center-items">
+                            <div class="mdl-layout-spacer"></div>
+                            <div class="mdl-cell mdl-cell--4-col">
+                                <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+                                    <div class="mdl-snackbar__text"></div>
+                                    <button class="mdl-snackbar__action" type="button"></button>
+                                </div>
+                            </div>
+                            <div class="mdl-layout-spacer"></div>
+                        </div>
+
+
+                        <script>
+                            $(function () {
+                                var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                                var data = {
+                                    message: 'Button color changed.',
+                                    timeout: 2000,
+                                    /*actionHandler: handler,*/
+                                    actionText: 'Undo'
+                                };
+                                snackbarContainer.style.backgroundColor = '#' +
+                                        Math.floor(Math.random() * 0xFFFFFF).toString(16);
+
+                                snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                            });
+                        </script>
 
 
                         <div class="${properties.kcFeedbackAreaClass!}">

@@ -1,14 +1,31 @@
 <!-- Wide card with share menu button -->
- .demo-card-wide.mdl-card {
-     /*width: 512px;*/
- }
+
+.onkalo-align-center {
+    text-align: center;
+}
+
+.demo-card-wide.mdl-card {
+    width: 100%;
+}
+
 .demo-card-wide > .mdl-card__title {
     color: #fff;
     height: 176px;
     background: url('../img/welcome_card.jpg') center / cover;
+
 }
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
+}
+
+body {
+    padding: 20px 0 0;
+    background: #fafafa;
+    position: relative;
+}
+
+.mdl-grid.center-items {
+    justify-content: center;
 }
 
 
