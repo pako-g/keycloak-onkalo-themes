@@ -30,13 +30,15 @@
                                     <label class="mdl-textfield__label" for="username">
                                         <#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if>
                                     </label>
+                                    <span class="mdl-textfield__error">${msg("username")} ${msg("empty")}</span>
+
                                 </div>
 
 
-
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                                    <input class="mdl-textfield__input" type="password" id="password" name="password" autocomplete="off">
+                                    <input class="mdl-textfield__input is-invalid" type="password" id="password" name="password"  autocomplete="off">
                                     <label class="mdl-textfield__label" for="password">${msg("password")}</label>
+                                    <span class="mdl-textfield__error">${msg("password")} ${msg("empty")}</span>
                                 </div>
 
                                 <#if realm.rememberMe && !usernameEditDisabled??>
@@ -63,6 +65,31 @@
                                 </div>
                             </div>
                         </form>
+                        <script>
+                            $(function () {
+                                var submitButton = document.querySelector('#kc-login');
+                                var username = $("#username");
+                                var password = $("#password");
+
+                                submitButton.addEventListener('click', function() {
+                                    'use strict';
+                                    addValidation(username);
+                                    addValidation(password);
+                                });
+
+                                username[0].addEventListener('focusout', function() {
+                                    'use strict';
+                                    addValidation(username);
+                                });
+                                password[0].addEventListener('focusout', function() {
+                                    'use strict';
+                                    addValidation(password);
+                                });
+
+                            });
+                        </script>
+
+
 
                     </div>
                     <div class="mdl-card__actions mdl-card--border">

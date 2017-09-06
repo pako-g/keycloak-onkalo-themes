@@ -68,10 +68,13 @@
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
 
                     <#if displayMessage && message?has_content>
-                        <#--${displayMessage?c}<br/>
+                        ${displayMessage?c}<br/>
                         ${message?has_content?c}<br/>
                         ${message.type}<br/>
-                        <#global test = message.summary >-->
+                        ${message.summary}
+
+                    <#--
+                    <#global test = message.summary >-->
 
                         <#--<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar mdl-color--accent">
                             <div class="mdl-snackbar__text"></div>

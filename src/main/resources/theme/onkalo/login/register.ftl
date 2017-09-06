@@ -5,6 +5,8 @@
     <#elseif section = "header">
         ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))}
     <#elseif section = "form">
+
+
     <div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-cell mdl-cell--4-col">
