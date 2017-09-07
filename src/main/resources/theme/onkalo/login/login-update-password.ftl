@@ -30,7 +30,7 @@
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                             <input class="mdl-textfield__input" type="password" id="password-confirm" name="password-confirm" autocomplete="off">
                             <label class="mdl-textfield__label" for="password-confirm">${msg("passwordConfirm")}</label>
-                            <span class="mdl-textfield__error">${msg("passwordConfirm")} ${msg("empty")}</span>
+                            <span class="mdl-textfield__error" id="error-confirm">${msg("passwordConfirm")} ${msg("empty")}</span>
                         </div>
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="kc-submit">
@@ -45,6 +45,7 @@
                         var password = $("#password-new");
                         var passwordConfirm = $("#password-confirm");
                         var submitButton = document.querySelector('#kc-submit');
+                        var errorConfirm= $("#error-confirm");
 
                         submitButton.addEventListener('click', function() {
                             'use strict';
@@ -58,6 +59,20 @@
                         passwordConfirm[0].addEventListener('focusout', function() {
                             'use strict';
                             addValidation(passwordConfirm);
+
+                            if( password.val() !== undefined && passwordConfirm.val() !== undefined &&
+                                    passwordConfirm.val().length > 1 && password.val().length > 1 ){
+                                if(password.val() !== passwordConfirm.val() && passwordConfirm.val().length > 0 ){
+                                    errorConfirm[0].innerText = document.createTextNode("Password not equals").textContent;
+                                    passwordConfirm.parent().addClass('is-invalid');
+                                }
+
+                            }
+                            else if(passwordConfirm.val() === undefined && password.val() !== undefined ||
+                                    passwordConfirm.val().length < 1 && password.val().length > 0){
+                                errorConfirm[0].innerText = document.createTextNode("Input must not be empty").textContent;
+                                passwordConfirm.parent().addClass('is-invalid');
+                            }
                         });
 
                         btnPasswordShow.addEventListener('mousedown', function () {
