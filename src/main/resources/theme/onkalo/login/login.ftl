@@ -42,7 +42,7 @@
                                 </div>
 
                                 <#if realm.rememberMe && !usernameEditDisabled??>
-                                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="rememberMe">
+                                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="rememberMe" id="remember-me">
                                         <#if login.rememberMe??>
                                             <input type="checkbox" id="rememberMe" class="mdl-switch__input" name="rememberMe" tabindex="3" checked>
                                             <#--<input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked> ${msg("rememberMe")}-->

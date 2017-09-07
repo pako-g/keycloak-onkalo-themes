@@ -22,7 +22,7 @@
                         <#if !realm.registrationEmailAsUsername>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)}">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                                    <input class="mdl-textfield__input" type="text" id="username" name="username" value="${(register.formData.username!'')?html}">
+                                    <input class="mdl-textfield__input" type="text" id="username" value="${(register.formData.username!'')?html}" name="username"  autofocus>
                                     <label class="mdl-textfield__label" for="username">${msg("username")}</label>
                                     <span class="mdl-textfield__error">${msg("username")} ${msg("empty")}</span>
                                 </div>
@@ -30,7 +30,11 @@
                         </#if>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
-                                    <input class="mdl-textfield__input" type="text" id="firstName" name="firstName" value="${(register.formData.firstName!'')?html}">
+                                    <#if !realm.registrationEmailAsUsername>
+                                        <input class="mdl-textfield__input" type="text" id="firstName" name="firstName" value="${(register.formData.firstName!'')?html}">
+                                    <#else >
+                                        <input class="mdl-textfield__input" type="text" id="firstName" value="${(register.formData.firstName!'')?html}" name="firstName"  autofocus>
+                                    </#if>
                                     <label class="mdl-textfield__label" for="firstName">${msg("firstName")}</label>
                                     <span class="mdl-textfield__error">${msg("firstName")} ${msg("empty")}</span>
                                 </div>
@@ -107,7 +111,7 @@
 
                             registerButton.addEventListener('click', function() {
                                 'use strict';
-                                if(!usernameFlag)
+                                if(usernameFlag === 'false')
                                     addValidation(username);
 
                                 addValidation(firstName);
@@ -118,12 +122,13 @@
                                     addValidation(passwordConfirm);
                                 }
                             });
-
-                            if(!usernameFlag)
+                            console.log(!usernameFlag);
+                            if(usernameFlag === 'false'){
                                 username[0].addEventListener('focusout', function() {
                                     'use strict';
                                     addValidation(username);
                                 });
+                            }
 
 
                             firstName[0].addEventListener('focusout', function() {
@@ -139,7 +144,7 @@
                                 addValidation(email);
                             });
 
-                            if(passwordFlag){
+                            if(passwordFlag === 'true'){
                                 password[0].addEventListener('focusout', function() {
                                     'use strict';
                                     addValidation(password);

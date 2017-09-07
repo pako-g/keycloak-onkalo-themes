@@ -16,6 +16,10 @@
     margin-bottom: 10px;
 }
 
+#remember-me {
+    margin-top: 20px;
+}
+
 .demo-card-wide.mdl-card {
     width: 100%;
 }

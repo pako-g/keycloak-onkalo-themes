@@ -21,11 +21,16 @@
 
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                             <input class="mdl-textfield__input" type="password" id="password-new" name="password-new" autofocus autocomplete="off">
+                            <button class="mdl-button mdl-js-button mdl-button--icon show-password" id="kc-password-show" type="button" onclick="return false;">
+                                <i class="material-icons">visibility</i>
+                            </button>
                             <label class="mdl-textfield__label" for="password-new">${msg("passwordNew")}</label>
+                            <span class="mdl-textfield__error">${msg("passwordNew")} ${msg("empty")}</span>
                         </div>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                             <input class="mdl-textfield__input" type="password" id="password-confirm" name="password-confirm" autocomplete="off">
                             <label class="mdl-textfield__label" for="password-confirm">${msg("passwordConfirm")}</label>
+                            <span class="mdl-textfield__error">${msg("passwordConfirm")} ${msg("empty")}</span>
                         </div>
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="kc-submit">
@@ -33,6 +38,38 @@
                             </button>
                         </div>
                     </form>
+
+                    <script>
+                    $(function () {
+                        var btnPasswordShow = document.querySelector("#kc-password-show");
+                        var password = $("#password-new");
+                        var passwordConfirm = $("#password-confirm");
+                        var submitButton = document.querySelector('#kc-submit');
+
+                        submitButton.addEventListener('click', function() {
+                            'use strict';
+                            addValidation(password);
+                            addValidation(passwordConfirm);
+                        });
+                        password[0].addEventListener('focusout', function() {
+                            'use strict';
+                            addValidation(password);
+                        });
+                        passwordConfirm[0].addEventListener('focusout', function() {
+                            'use strict';
+                            addValidation(passwordConfirm);
+                        });
+
+                        btnPasswordShow.addEventListener('mousedown', function () {
+                            'use strict';
+                            password.attr("type", "text");
+                        });
+                        btnPasswordShow.addEventListener('mouseup', function () {
+                            'use strict';
+                            password.attr("type", "password");
+                        });
+                    });
+                    </script>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
