@@ -9,7 +9,7 @@
 
     <div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
-        <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
             <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">Welcome</h2>
@@ -51,8 +51,10 @@
                             </div>
                         <#if passwordRequired>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('password',properties.kcFormGroupErrorClass!)}">
+                                <i class="material-icons">visibility</i>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="password" id="password" name="password">
+                                    <i class="material-icons">visibility</i>
                                     <label class="mdl-textfield__label" for="password">${msg("password")}</label>
                                     <span class="mdl-textfield__error">${msg("password")} ${msg("empty")}</span>
                                 </div>
