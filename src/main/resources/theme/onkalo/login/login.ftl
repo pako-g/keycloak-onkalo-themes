@@ -67,13 +67,13 @@
                                 </div>
                             </div>
                         </form>
-                        <script>
+<#--                        <script>
                             $(function () {
-                                var submitButton = document.querySelector('#kc-login');
+                                var btnLogin = document.querySelector('#kc-login');
                                 var username = $("#username");
                                 var password = $("#password");
 
-                                submitButton.addEventListener('click', function() {
+                                btnLogin.addEventListener('click', function() {
                                     'use strict';
                                     addValidation(username);
                                     addValidation(password);
@@ -89,7 +89,7 @@
                                 });
 
                             });
-                        </script>
+                        </script>-->
 
 
 

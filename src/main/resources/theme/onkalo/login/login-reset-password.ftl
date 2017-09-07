@@ -18,7 +18,7 @@
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                 <input class="mdl-textfield__input" type="text" id="username" name="username" autofocus>
                                 <label class="mdl-textfield__label" for="username"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                                <span class="mdl-textfield__error">${msg("username")} ${msg("empty")}</span>
+                                <span class="mdl-textfield__error"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if> ${msg("empty")}</span>
                             </div>
                             <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="kc-submit">
@@ -26,7 +26,7 @@
                                 </button>
                             </div>
                         </form>
-                        <script>
+                        <#--<script>
                             $(function () {
                                 var submitButton = document.querySelector('#kc-submit');
                                 var username = $("#username");
@@ -40,7 +40,7 @@
                                     addValidation(username);
                                 });
                             });
-                        </script>
+                        </script>-->
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
