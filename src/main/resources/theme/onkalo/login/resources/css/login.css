@@ -4,6 +4,11 @@
     text-align: center;
 }
 
+.show-password {
+    position: absolute;
+    left:345px;
+}
+
 .demo-card-wide.mdl-card {
     width: 100%;
 }

@@ -51,10 +51,11 @@
                             </div>
                         <#if passwordRequired>
                             <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('password',properties.kcFormGroupErrorClass!)}">
-                                <i class="material-icons">visibility</i>
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield--full-width">
                                     <input class="mdl-textfield__input" type="password" id="password" name="password">
-                                    <i class="material-icons">visibility</i>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon show-password" id="kc-password-show" type="button" onclick="return false;">
+                                        <i class="material-icons">visibility</i>
+                                    </button>
                                     <label class="mdl-textfield__label" for="password">${msg("password")}</label>
                                     <span class="mdl-textfield__error">${msg("password")} ${msg("empty")}</span>
                                 </div>
@@ -85,19 +86,24 @@
                             var registerButton = document.querySelector('#kc-register');
                             var usernameFlag="${realm.registrationEmailAsUsername?c}";
                             var passwordFlag="${passwordRequired?c}";
-
-                            console.log(usernameFlag);
-                            console.log(passwordFlag);
-
-
                             var username = $("#username");
                             var firstName = $("#firstName");
                             var lastName = $("#lastName");
                             var email = $("#email");
                             var password = $("#password");
                             var passwordConfirm = $("#password-confirm");
+                            var btnPasswordShow = document.querySelector("#kc-password-show");
 
-                            console.log(username);
+                            btnPasswordShow.addEventListener('mousedown', function () {
+                                'use strict';
+                                password.attr("type", "text");
+
+                            });
+                            btnPasswordShow.addEventListener('mouseup', function () {
+                                'use strict';
+                                password.attr("type", "password");
+                            });
+                            
 
                             registerButton.addEventListener('click', function() {
                                 'use strict';
