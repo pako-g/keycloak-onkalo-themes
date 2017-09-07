@@ -58,9 +58,11 @@
                                 <!-- Accent-colored raised button with ripple -->
                                 <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                                     <div class="${properties.kcFormButtonsWrapperClass!}">
-                                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  type="submit" name="login" id="kc-login">
-                                        ${msg("doLogIn")}
-                                    </button>
+                                        <div class="mdl-typography--text-justify">
+                                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  type="submit" name="login" id="kc-login">
+                                            ${msg("doLogIn")}
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

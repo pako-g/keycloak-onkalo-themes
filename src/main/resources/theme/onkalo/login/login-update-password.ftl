@@ -28,7 +28,7 @@
                             <label class="mdl-textfield__label" for="password-confirm">${msg("passwordConfirm")}</label>
                         </div>
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="kc-submit">
                             ${msg("doSubmit")}
                             </button>
                         </div>

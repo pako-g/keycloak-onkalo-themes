@@ -9,6 +9,13 @@
     left:345px;
 }
 
+#kc-login, #kc-register, #kc-submit {
+    width: 100%;
+    min-width: initial;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .demo-card-wide.mdl-card {
     width: 100%;
 }

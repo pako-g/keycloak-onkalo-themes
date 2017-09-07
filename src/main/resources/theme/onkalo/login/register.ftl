@@ -103,7 +103,7 @@
                                 'use strict';
                                 password.attr("type", "password");
                             });
-                            
+
 
                             registerButton.addEventListener('click', function() {
                                 'use strict';
