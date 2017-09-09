@@ -1,9 +1,6 @@
 $(function () {
     'use strict';
-
-    //var btnLogin = document.querySelector('#kc-login'); //return null if not exist
-    //var submitButton = document.querySelector('#kc-submit');
-
+    
     var btnLogin = $("#kc-login");
     var btnSubmit = $("#kc-submit");
     var btnRegister = $("#kc-register");
@@ -22,38 +19,6 @@ $(function () {
 
     btnEventListener(btnFields, textFields);
     textEventListener(textFields);
-
-    /*if(btnLogin[0] !== undefined){
-        btnLogin[0].addEventListener('click', function() {
-            'use strict';
-            addValidation(username);
-            addValidation(password);
-        });
-    }*/
-
-
-    /*if(submitButton[0] !== undefined){
-        submitButton[0].addEventListener('click', function() {
-            'use strict';
-            addValidation(username);
-        });
-    }*/
-
-
-    /*if(username[0] !== undefined){
-        username[0].addEventListener('focusout', function() {
-            'use strict';
-            addValidation(username);
-        });
-    }
-
-    if (password[0] !== undefined){
-        password[0].addEventListener('focusout', function() {
-            'use strict';
-            addValidation(password);
-        });
-    }*/
-
 });
 
 
