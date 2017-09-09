@@ -88,6 +88,8 @@
                     <script>
                         $(function () {
                             var registerButton = document.querySelector('#kc-register');
+
+
                             var usernameFlag="${realm.registrationEmailAsUsername?c}";
                             var passwordFlag="${passwordRequired?c}";
                             var username = $("#username");
@@ -110,7 +112,7 @@
                             });
 
 
-                            registerButton.addEventListener('click', function() {
+                            /*registerButton.addEventListener('click', function() {
                                 'use strict';
                                 if(usernameFlag === 'false')
                                     addValidation(username);
@@ -122,7 +124,7 @@
                                     addValidation(password);
                                     addValidation(passwordConfirm);
                                 }
-                            });
+                            });*/
 
                             if(usernameFlag === 'false'){
                                 username[0].addEventListener('focusout', function() {

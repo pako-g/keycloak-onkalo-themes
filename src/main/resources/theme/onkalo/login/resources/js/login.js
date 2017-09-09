@@ -5,14 +5,21 @@ $(function () {
     //var submitButton = document.querySelector('#kc-submit');
 
     var btnLogin = $("#kc-login");
-    var submitButton = $("#kc-submit");
+    var btnSubmit = $("#kc-submit");
+    var btnRegister = $("#kc-register");
+
 
     var username = $("#username"); //return undefined if not exist
     var password = $("#password");
 
+    var firstName = $("#firstName");
+    var lastName = $("#lastName");
+    var email = $("#email");
+    var passwordConfirm = $("#password-confirm");
 
-    var btnFields = [ btnLogin,submitButton ];
-    var textFields = [ username, password];
+
+    var btnFields = [ btnLogin, btnSubmit, btnRegister ];
+    var textFields = [ username, password, firstName, lastName, email, passwordConfirm];
 
     btnEventListener(btnFields, textFields);
 
@@ -93,5 +100,5 @@ function colorSnackbar(element, messageType){
     if( messageType === "info" ){
         element.style.backgroundColor = '#0281FF';
     }
-
 }
+

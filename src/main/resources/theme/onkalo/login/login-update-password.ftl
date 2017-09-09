@@ -44,14 +44,16 @@
                         var btnPasswordShow = document.querySelector("#kc-password-show");
                         var password = $("#password-new");
                         var passwordConfirm = $("#password-confirm");
-                        var submitButton = document.querySelector('#kc-submit');
+                        //var submitButton = document.querySelector('#kc-submit');
                         var errorConfirm= $("#error-confirm");
 
-                        submitButton.addEventListener('click', function() {
+                        /*submitButton.addEventListener('click', function() {
                             'use strict';
                             addValidation(password);
                             addValidation(passwordConfirm);
-                        });
+                        });*/
+
+
                         password[0].addEventListener('focusout', function() {
                             'use strict';
                             addValidation(password);
