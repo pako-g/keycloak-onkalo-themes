@@ -54,13 +54,13 @@
                         });*/
 
 
-                        password[0].addEventListener('focusout', function() {
+                        /*password[0].addEventListener('focusout', function() {
                             'use strict';
                             addValidation(password);
-                        });
+                        });*/
                         passwordConfirm[0].addEventListener('focusout', function() {
                             'use strict';
-                            addValidation(passwordConfirm);
+                            //addValidation(passwordConfirm);
 
                             if( password.val() !== undefined && passwordConfirm.val() !== undefined &&
                                     passwordConfirm.val().length > 1 && password.val().length > 1 ){

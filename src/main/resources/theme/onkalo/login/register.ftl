@@ -87,15 +87,18 @@
                     </form>
                     <script>
                         $(function () {
-                            var registerButton = document.querySelector('#kc-register');
+                            //var registerButton = document.querySelector('#kc-register');
 
 
                             var usernameFlag="${realm.registrationEmailAsUsername?c}";
                             var passwordFlag="${passwordRequired?c}";
-                            var username = $("#username");
+
+                            /*var username = $("#username");
                             var firstName = $("#firstName");
                             var lastName = $("#lastName");
                             var email = $("#email");
+                            */
+
                             var password = $("#password");
                             var passwordConfirm = $("#password-confirm");
                             var btnPasswordShow = document.querySelector("#kc-password-show");
@@ -126,7 +129,7 @@
                                 }
                             });*/
 
-                            if(usernameFlag === 'false'){
+                            /*if(usernameFlag === 'false'){
                                 username[0].addEventListener('focusout', function() {
                                     'use strict';
                                     addValidation(username);
@@ -146,16 +149,16 @@
                                 'use strict';
                                 addValidation(email);
                             });
-
+*/
                             if(passwordFlag === 'true'){
-                                password[0].addEventListener('focusout', function() {
+                                /*password[0].addEventListener('focusout', function() {
                                     'use strict';
                                     addValidation(password);
-                                });
+                                });*/
 
                                 passwordConfirm[0].addEventListener('focusout', function() {
                                     'use strict';
-                                    addValidation(passwordConfirm);
+                                    //addValidation(passwordConfirm);
 
                                     if( password.val() !== undefined && passwordConfirm.val() !== undefined &&
                                             passwordConfirm.val().length > 1 && password.val().length > 1 ){

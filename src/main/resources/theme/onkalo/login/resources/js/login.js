@@ -8,20 +8,20 @@ $(function () {
     var btnSubmit = $("#kc-submit");
     var btnRegister = $("#kc-register");
 
-
     var username = $("#username"); //return undefined if not exist
     var password = $("#password");
-
     var firstName = $("#firstName");
     var lastName = $("#lastName");
     var email = $("#email");
     var passwordConfirm = $("#password-confirm");
+    var passwordNew = $("#password-new");
 
 
     var btnFields = [ btnLogin, btnSubmit, btnRegister ];
-    var textFields = [ username, password, firstName, lastName, email, passwordConfirm];
+    var textFields = [ username, password, firstName, lastName, email, passwordConfirm, passwordNew];
 
     btnEventListener(btnFields, textFields);
+    textEventListener(textFields);
 
     /*if(btnLogin[0] !== undefined){
         btnLogin[0].addEventListener('click', function() {
@@ -40,7 +40,7 @@ $(function () {
     }*/
 
 
-    if(username[0] !== undefined){
+    /*if(username[0] !== undefined){
         username[0].addEventListener('focusout', function() {
             'use strict';
             addValidation(username);
@@ -52,10 +52,20 @@ $(function () {
             'use strict';
             addValidation(password);
         });
-    }
+    }*/
 
 });
 
+
+function textEventListener(textFields) {
+    textFields.forEach(function (field) {
+       if( field[0] !== undefined ){
+           field[0].addEventListener('focusout', function () {
+               addValidation(field);
+           });
+       }
+    });
+}
 
 function btnEventListener (btnFields, textFields) {
     btnFields.forEach(function(btn){
