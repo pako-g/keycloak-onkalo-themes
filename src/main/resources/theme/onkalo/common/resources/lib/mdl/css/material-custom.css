@@ -1,0 +1,48 @@
+
+.mdl-progress-red > .bufferbar {
+    background-image: linear-gradient(to right, rgba(255,255,255, 0.7), rgba(255,255,255, 0.7)), linear-gradient(to right, rgb(255,0,0), rgb(255,0,0))  !important;
+}
+
+.mdl-progress-red > .auxbar {
+    background-image: linear-gradient(to right, rgba(255,255,255, 0.9), rgba(255,255,255, 0.9)), linear-gradient(to right, rgb(255,0,0), rgb(255,0,0))  !important;
+}
+
+.mdl-progress-red > .progressbar {
+    background-color: rgb(255,0,0) !important;
+}
+
+.mdl-progress-orange > .bufferbar {
+    background-image: linear-gradient(to right, rgba(255,227,199, 0.7), rgba(255,227,199, 0.7)), linear-gradient(to right, rgb(255,145,0), rgb(255,145,0))  !important;
+}
+
+.mdl-progress-orange > .auxbar {
+    background-image: linear-gradient(to right, rgba(255,227,199, 0.9), rgba(255,227,199, 0.9)), linear-gradient(to right, rgb(255,145,0), rgb(255,145,0))  !important;
+}
+
+.mdl-progress-orange > .progressbar {
+    background-color: rgb(255,145,0) !important;
+}
+
+.mdl-progress-yellow > .bufferbar {
+    background-image: linear-gradient(to right, rgba(255,255,206, 0.7), rgba(255,255,206, 0.7)), linear-gradient(to right, rgb(240,220,0), rgb(240,220,0))  !important;
+}
+
+.mdl-progress-yellow > .auxbar {
+    background-image: linear-gradient(to right, rgba(255,255,206, 0.9), rgba(255,255,206, 0.9)), linear-gradient(to right, rgb(240,220,0), rgb(240,220,0))  !important;
+}
+
+.mdl-progress-yellow > .progressbar {
+    background-color: rgb(240,220,0) !important;
+}
+
+.mdl-progress-green > .bufferbar {
+    background-image: linear-gradient(to right, rgba(214,255,214, 0.7), rgba(214,255,214, 0.7)), linear-gradient(to right, rgb(0,153,0), rgb(0,153,0))  !important;
+}
+
+.mdl-progress-green > .auxbar {
+    background-image: linear-gradient(to right, rgba(214,255,214, 0.9), rgba(214,255,214, 0.9)), linear-gradient(to right, rgb(0,153,0), rgb(0,153,0))  !important;
+}
+
+.mdl-progress-green > .progressbar {
+    background-color: rgb(0,153,0) !important;
+}

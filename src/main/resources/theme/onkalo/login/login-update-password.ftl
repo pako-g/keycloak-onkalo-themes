@@ -32,6 +32,12 @@
                             <label class="mdl-textfield__label" for="password-confirm">${msg("passwordConfirm")}</label>
                             <span class="mdl-textfield__error" id="error-confirm">${msg("passwordConfirm")} ${msg("empty")}</span>
                         </div>
+
+                        <div id="progress-password-strength" class="mdl-progress mdl-js-progress"></div>
+                        <div id="wrap-text-password-strength">
+                            <span id="percent-text-password-strength"></span><span id="text-password-strength"></span>
+                        </div>
+
                         <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" id="kc-submit">
                             ${msg("doSubmit")}
@@ -40,6 +46,8 @@
                     </form>
 
                     <script>
+
+                        $('#password-new').password({ animate: true, showPercent: true, showText: true });
                     $(function () {
                         var btnPasswordShow = document.querySelector("#kc-password-show");
                         var password = $("#password-new");

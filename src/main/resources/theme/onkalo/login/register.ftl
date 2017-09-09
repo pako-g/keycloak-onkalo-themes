@@ -71,6 +71,10 @@
                                     <span class="mdl-textfield__error" id="error-confirm">${msg("passwordConfirm")} ${msg("empty")}</span>
                                 </div>
                             </div>
+                            <div id="progress-password-strength" class="mdl-progress mdl-js-progress"></div>
+                            <div id="wrap-text-password-strength">
+                                <span id="percent-text-password-strength"></span><span id="text-password-strength"></span>
+                            </div>
                         </#if>
                         <#if recaptchaRequired??>
                             <div class="form-group">
@@ -86,6 +90,8 @@
                             </div>
                     </form>
                     <script>
+                        $('#password').password({ animate: true, showPercent: true, showText: true });
+
                         $(function () {
                             //var registerButton = document.querySelector('#kc-register');
 
