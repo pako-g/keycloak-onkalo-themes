@@ -67,31 +67,6 @@
                                 </div>
                             </div>
                         </form>
-<#--                        <script>
-                            $(function () {
-                                var btnLogin = document.querySelector('#kc-login');
-                                var username = $("#username");
-                                var password = $("#password");
-
-                                btnLogin.addEventListener('click', function() {
-                                    'use strict';
-                                    addValidation(username);
-                                    addValidation(password);
-                                });
-
-                                username[0].addEventListener('focusout', function() {
-                                    'use strict';
-                                    addValidation(username);
-                                });
-                                password[0].addEventListener('focusout', function() {
-                                    'use strict';
-                                    addValidation(password);
-                                });
-
-                            });
-                        </script>-->
-
-
 
                     </div>
                     <div class="mdl-card__actions mdl-card--border">

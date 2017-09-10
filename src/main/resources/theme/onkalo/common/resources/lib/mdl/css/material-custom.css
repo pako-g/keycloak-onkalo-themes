@@ -1,4 +1,8 @@
 
+/*#progress-password-strength, percent-text-password-strength, text-password-strength{
+    top: 15px;
+}*/
+
 .mdl-progress-red > .bufferbar {
     background-image: linear-gradient(to right, rgba(255,255,255, 0.7), rgba(255,255,255, 0.7)), linear-gradient(to right, rgb(255,0,0), rgb(255,0,0))  !important;
 }

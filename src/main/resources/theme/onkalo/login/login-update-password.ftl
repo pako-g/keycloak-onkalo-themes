@@ -33,8 +33,9 @@
                             <span class="mdl-textfield__error" id="error-confirm">${msg("passwordConfirm")} ${msg("empty")}</span>
                         </div>
 
-                        <div id="progress-password-strength" class="mdl-progress mdl-js-progress"></div>
+
                         <div id="wrap-text-password-strength">
+                            <div id="progress-password-strength" class="mdl-progress mdl-js-progress"></div>
                             <span id="percent-text-password-strength"></span><span id="text-password-strength"></span>
                         </div>
 
@@ -48,52 +49,6 @@
                     <script>
 
                         $('#password-new').password({ animate: true, showPercent: true, showText: true });
-                    $(function () {
-                        var btnPasswordShow = document.querySelector("#kc-password-show");
-                        var password = $("#password-new");
-                        var passwordConfirm = $("#password-confirm");
-                        //var submitButton = document.querySelector('#kc-submit');
-                        var errorConfirm= $("#error-confirm");
-
-                        /*submitButton.addEventListener('click', function() {
-                            'use strict';
-                            addValidation(password);
-                            addValidation(passwordConfirm);
-                        });*/
-
-
-                        /*password[0].addEventListener('focusout', function() {
-                            'use strict';
-                            addValidation(password);
-                        });*/
-                        passwordConfirm[0].addEventListener('focusout', function() {
-                            'use strict';
-                            //addValidation(passwordConfirm);
-
-                            if( password.val() !== undefined && passwordConfirm.val() !== undefined &&
-                                    passwordConfirm.val().length > 1 && password.val().length > 1 ){
-                                if(password.val() !== passwordConfirm.val() && passwordConfirm.val().length > 0 ){
-                                    errorConfirm[0].innerText = document.createTextNode("Password not equals").textContent;
-                                    passwordConfirm.parent().addClass('is-invalid');
-                                }
-
-                            }
-                            else if(passwordConfirm.val() === undefined && password.val() !== undefined ||
-                                    passwordConfirm.val().length < 1 && password.val().length > 0){
-                                errorConfirm[0].innerText = document.createTextNode("Input must not be empty").textContent;
-                                passwordConfirm.parent().addClass('is-invalid');
-                            }
-                        });
-
-                        btnPasswordShow.addEventListener('mousedown', function () {
-                            'use strict';
-                            password.attr("type", "text");
-                        });
-                        btnPasswordShow.addEventListener('mouseup', function () {
-                            'use strict';
-                            password.attr("type", "password");
-                        });
-                    });
                     </script>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">

@@ -26,21 +26,6 @@
                                 </button>
                             </div>
                         </form>
-                        <#--<script>
-                            $(function () {
-                                var submitButton = document.querySelector('#kc-submit');
-                                var username = $("#username");
-
-                                submitButton.addEventListener('click', function() {
-                                    'use strict';
-                                    addValidation(username);
-                                    });
-                                username[0].addEventListener('focusout', function() {
-                                    'use strict';
-                                    addValidation(username);
-                                });
-                            });
-                        </script>-->
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
                         <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">

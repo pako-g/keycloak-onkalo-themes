@@ -1,9 +1,10 @@
 $(function () {
     'use strict';
-    
+
     var btnLogin = $("#kc-login");
     var btnSubmit = $("#kc-submit");
     var btnRegister = $("#kc-register");
+    var btnPasswordShow = $("#kc-password-show");
 
     var username = $("#username"); //return undefined if not exist
     var password = $("#password");
@@ -13,20 +14,59 @@ $(function () {
     var passwordConfirm = $("#password-confirm");
     var passwordNew = $("#password-new");
 
+    var errorConfirm= $("#error-confirm");
+
 
     var btnFields = [ btnLogin, btnSubmit, btnRegister ];
     var textFields = [ username, password, firstName, lastName, email, passwordConfirm, passwordNew];
 
     btnEventListener(btnFields, textFields);
-    textEventListener(textFields);
+    textEventListener(textFields, errorConfirm);
+
+
+
+
+
+    if(btnPasswordShow[0] !== undefined){
+        btnPasswordShow[0].addEventListener('mousedown', function () {
+            'use strict';
+            password.attr("type", "text");
+
+        });
+        btnPasswordShow[0].addEventListener('mouseup', function () {
+            'use strict';
+            password.attr("type", "password");
+        });
+    }
+
 });
 
 
-function textEventListener(textFields) {
+function textEventListener(textFields, errorConfirm) {
+    var password;
     textFields.forEach(function (field) {
        if( field[0] !== undefined ){
+
+           if(field[0].id === 'password' || field[0].id === 'password-new')
+               password=field;
+
            field[0].addEventListener('focusout', function () {
                addValidation(field);
+               if(field[0].id === 'password-confirm' ){
+
+                   if( password.val() !== undefined && field.val() !== undefined &&
+                       field.val().length > 1 && password.val().length > 1 ){
+                       if(password.val() !== field.val() && field.val().length > 0 ){
+                           errorConfirm[0].innerText = document.createTextNode("Password not equals").textContent;
+                           field.parent().addClass('is-invalid');
+                       }
+                   }
+                   else if(field.val() === undefined && password.val() !== undefined ||
+                       field.val().length < 1 && password.val().length > 0){
+                       errorConfirm[0].innerText = document.createTextNode("Input must not be empty").textContent;
+                       field.parent().addClass('is-invalid');
+                   }
+               }
            });
        }
     });

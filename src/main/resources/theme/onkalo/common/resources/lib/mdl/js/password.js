@@ -221,7 +221,7 @@
                 $object.trigger('password.score', [score]);
 
                 perc = score < 0 ? 0 : score;
-                console.log($object.val().length);
+                //console.log($object.val().length);
 
                 if($object.val().length === 0 ){
                     pps.css("visibility", "hidden");
