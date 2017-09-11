@@ -9,7 +9,7 @@
     left:345px;
 }
 
-#kc-login, #kc-register, #kc-submit {
+#kc-login, #kc-register, #kc-submit, #kc-cancel {
     width: 100%;
     min-width: initial;
     margin-top: 20px;

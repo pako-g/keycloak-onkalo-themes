@@ -13,12 +13,13 @@ $(function () {
     var email = $("#email");
     var passwordConfirm = $("#password-confirm");
     var passwordNew = $("#password-new");
+    var totp = $("#totp");
 
     var errorConfirm= $("#error-confirm");
 
 
     var btnFields = [ btnLogin, btnSubmit, btnRegister ];
-    var textFields = [ username, password, firstName, lastName, email, passwordConfirm, passwordNew];
+    var textFields = [ username, password, firstName, lastName, email, passwordConfirm, passwordNew, totp];
 
     btnEventListener(btnFields, textFields);
     textEventListener(textFields, errorConfirm);
