@@ -8,6 +8,18 @@
     position: absolute;
     left:345px;
 }
+.code{
+    font-weight: bold;
+}
+
+ol {
+    padding: 0 15px;
+    text-align: center;
+}
+
+#kc-totp-secret-qr-code {
+
+}
 
 #kc-login, #kc-register, #kc-submit, #kc-cancel {
     width: 100%;
