@@ -5,6 +5,7 @@ $(function () {
     var btnSubmit = $("#kc-submit");
     var btnRegister = $("#kc-register");
     var btnPasswordShow = $("#kc-password-show");
+    var btnCancel = $("#kc-cancel");
 
     var username = $("#username"); //return undefined if not exist
     var password = $("#password");
@@ -17,8 +18,10 @@ $(function () {
 
     var errorConfirm= $("#error-confirm");
 
+    if(btnCancel[0] !== undefined)
+        console.log(btnCancel[0].id);
 
-    var btnFields = [ btnLogin, btnSubmit, btnRegister ];
+    var btnFields = [ btnLogin, btnSubmit, btnRegister, btnCancel ];
     var textFields = [ username, password, firstName, lastName, email, passwordConfirm, passwordNew, totp];
 
     btnEventListener(btnFields, textFields);
@@ -76,13 +79,22 @@ function textEventListener(textFields, errorConfirm) {
 function btnEventListener (btnFields, textFields) {
     btnFields.forEach(function(btn){
         if( btn[0]!== undefined ){
-            btn[0].addEventListener('click', function () {
-                textFields.forEach(function (textField) {
-                    if( textField[0] !== undefined){
-                        addValidation(textField);
-                    }
+            if( btn[0].id !== 'kc-cancel'){
+                btn[0].addEventListener('click', function () {
+                    textFields.forEach(function (textField) {
+                        if( textField[0] !== undefined){
+                            addValidation(textField);
+                        }
+                    });
                 });
-            });
+            }
+            else if (btn[0].id === 'kc-cancel'){
+                btn[0].addEventListener('click', function () {
+                    $("#totp").removeAttr('required');
+                    $("#totp").removeClass('is-invalid');
+                });
+            }
+
         }
     });
 
