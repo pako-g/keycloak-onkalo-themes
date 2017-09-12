@@ -6,11 +6,6 @@
         ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))}
     <#elseif section = "form">
 
-
-    <div class="mdl-grid">
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">Welcome</h2>
                 </div>
@@ -100,10 +95,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="mdl-layout-spacer"></div>
-    </div>
     </#if>
 </@layout.registrationLayout>

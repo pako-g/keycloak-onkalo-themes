@@ -6,10 +6,10 @@
         ${msg("emailVerifyTitle")}
     <#elseif section = "form">
 
-    <div class="mdl-grid">
+    <#--<div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">-->
                 <div class="mdl-card__title">
                     <h2 class="mdl-card__title-text">Welcome</h2>
                 </div>
@@ -24,11 +24,11 @@
                 <div class="mdl-card__actions mdl-card--border">
 
                 </div>
-            </div>
 
+        <#--    </div>
         </div>
         <div class="mdl-layout-spacer"></div>
-    </div>
+    </div>-->
 
 
     </#if>

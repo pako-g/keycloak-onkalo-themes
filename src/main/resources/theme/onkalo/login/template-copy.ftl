@@ -117,15 +117,7 @@
 
                     <div id="kc-form" class="${properties.kcFormAreaClass!}">
                         <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                            <div class="mdl-grid">
-                                <div class="mdl-layout-spacer"></div>
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
-                                    <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width" ">
-                                        <#nested "form">
-                                    </div>
-                                </div>
-                                <div class="mdl-layout-spacer"></div>
-                            </div>
+                            <#nested "form">
                         </div>
                     </div>
 

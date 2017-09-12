@@ -9,6 +9,10 @@ Simplest way to deploy the themes is to copy `src/main/resources/theme/*` to `th
 
 ### Module
 
+Change `<properties>` into pom.xml
+   
+    `<KEYCLOAK_HOME>**PATH-YOUR_KEYCLOAK-HOME**</KEYCLOAK_HOME>`    
+
 Alternatively you can deploy as modules. This can be done by first running:
 
     mvn clean install
