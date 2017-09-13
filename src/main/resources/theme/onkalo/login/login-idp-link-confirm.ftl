@@ -5,7 +5,6 @@
     <#elseif section = "header">
          ${msg("confirmLinkIdpTitle")}
     <#elseif section = "form">
-
     <div class="mdl-grid">
         <div class="mdl-layout-spacer"></div>
             <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
