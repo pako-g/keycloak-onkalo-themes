@@ -21,7 +21,7 @@ ol {
 
 }
 
-#kc-login, #kc-register, #kc-submit, #kc-cancel {
+#kc-login, #kc-register, #kc-submit, #kc-cancel, #updateProfile, #linkAccount {
     width: 100%;
     min-width: initial;
     margin-top: 20px;
