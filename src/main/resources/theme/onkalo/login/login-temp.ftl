@@ -20,8 +20,6 @@
 
                     <div class="mdl-card__supporting-text">
 
-
-
                     </div>
                 </div>
             </div>

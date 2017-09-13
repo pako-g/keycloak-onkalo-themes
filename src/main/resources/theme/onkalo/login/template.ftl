@@ -115,26 +115,18 @@
                         </div>-->
                     </#if>
 
-                    <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                        <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                            <div class="mdl-grid">
-                                <div class="mdl-layout-spacer"></div>
-                                <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
-                                    <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width" ">
-                                        <#nested "form">
-                                    </div>
-                                </div>
-                                <div class="mdl-layout-spacer"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <#--<div id="kc-form" class="${properties.kcFormAreaClass!}">
+                        <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">-->
+                            <#nested "form">
+                    <#--    </div>
+                    </div>-->
 
                     <#if displayInfo>
-                        <div id="kc-info" class="${properties.kcInfoAreaClass!}">
-                            <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                        <#--<div id="kc-info" class="${properties.kcInfoAreaClass!}">
+                            <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">-->
                                 <#nested "info">
-                            </div>
-                        </div>
+                            <#--</div>
+                        </div>-->
                     </#if>
                 </div>
             </div>

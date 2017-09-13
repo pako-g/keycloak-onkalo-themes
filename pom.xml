@@ -24,6 +24,8 @@
 
     <properties>
         <KEYCLOAK_HOME>/home/pasquale/opt/keycloak-3.3.0.CR1</KEYCLOAK_HOME>
+        <!--<KEYCLOAK_HOME>/home/pasquale/opt/keycloak-3.3.0.CR2</KEYCLOAK_HOME>-->
+
         <!--<KEYCLOAK_HOME>${env.KEYCLOAK_HOME}</KEYCLOAK_HOME>-->
 
     </properties>

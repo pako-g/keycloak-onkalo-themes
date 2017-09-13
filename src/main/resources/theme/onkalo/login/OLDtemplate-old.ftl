@@ -66,13 +66,7 @@
 
             <div id="kc-content" class="${properties.kcContentClass!}">
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
-
                     <#if displayMessage && message?has_content>
-                        <#--${displayMessage?c}<br/>
-                        ${message?has_content?c}<br/>
-                        ${message.type}<br/>
-                        ${message.summary}-->
-
                         <div class="mdl-grid">
                             <div class="mdl-layout-spacer"></div>
                             <div class="mdl-cell mdl-cell--4-col">
@@ -83,8 +77,6 @@
                             </div>
                             <div class="mdl-layout-spacer"></div>
                         </div>
-
-
                         <script>
                             $(function () {
                                 var snackbarContainer = document.querySelector('#demo-snackbar-example');
@@ -95,38 +87,51 @@
                                     /*actionHandler: handler,*/
                                     actionText: 'Undo'
                                 };
-
                                 colorSnackbar(snackbarContainer,messageType);
-
                                 snackbarContainer.MaterialSnackbar.showSnackbar(data);
-
                             });
                         </script>
-
-
-                       <#-- <div class="${properties.kcFeedbackAreaClass!}">
-                            <div class="alert alert-${message.type}">
-                                <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                                <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                                <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-                                <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                                <span class="kc-feedback-text">${message.summary}</span>
-                            </div>
-                        </div>-->
                     </#if>
 
                     <div id="kc-form" class="${properties.kcFormAreaClass!}">
                         <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                            <#nested "form">
-                        </div>
-                    </div>
+                            <div class="mdl-grid">
+                                <div class="mdl-layout-spacer"></div>
+                                ${displayInfo?c}
+                                <#if displayInfo>
+                                    <#--${displayInfo?c}-->
+                                    <div class="mdl-cell mdl-cell--8-col mdl-cell--12-col-phone">
+                                        <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">
+                                <#else >
+                                   <#-- ${displayInfo?c}-->
+                                    <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone">
+                                        <div class="demo-card-wide mdl-card mdl-shadow--2dp mdl-textfield--full-width">
+                                </#if>
 
-                    <#if displayInfo>
-                        <div id="kc-info" class="${properties.kcInfoAreaClass!}">
-                            <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                                <#nested "info">
+                                            <#nested "form">
+                                        <#--<p>Test Form</p>-->
+
+                    ${displayInfo?c}
+                    <#if !displayInfo>
+                                        </div>
+                                    </div>
+                                <div class="mdl-layout-spacer"></div>
                             </div>
                         </div>
+                    </div>
+                    </#if>
+
+
+
+                    <#if displayInfo>
+                                <#nested "info">
+                                        </div>
+                                    </div>
+                                <div class="mdl-layout-spacer"></div>
+                            </div>
+                        </div>
+                        </div>
+
                     </#if>
                 </div>
             </div>
