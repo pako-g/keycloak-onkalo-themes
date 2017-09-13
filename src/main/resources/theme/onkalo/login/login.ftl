@@ -7,7 +7,6 @@
         ${msg("loginTitleHtml",(realm.displayNameHtml!''))}
     <#elseif section = "form">
         <#if realm.password>
-        ${social.providers???c}
         <div class="mdl-grid">
             <div class="mdl-layout-spacer"></div>
 
